@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ehud Woryi</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+ <style>
+    /* Custom CSS for Tailwind styles */
+    @layer base {
+      :root {
+        --background: hsl(240, 10%, 3.9%);
+        --foreground: hsl(0, 0%, 98%);
+        --primary: hsl(0, 0%, 98%);
+        --primary-foreground: hsl(240, 5.9%, 10%);
+        --muted: hsl(240, 3.7%, 15.9%);
+        --muted-foreground: hsl(240, 5%, 64.9%);
+        --ash: hsl(240, 2%, 50%); /* Ashen color */
+      }
+      .dark {
+        --background: hsl(0, 0%, 100%);
+        --foreground: hsl(240, 10%, 3.9%);
+        --primary: hsl(240, 5.9%, 10%);
+        --primary-foreground: hsl(0, 0%, 98%);
+        --muted: hsl(240, 4.8%, 95.9%);
+        --muted-foreground: hsl(240, 3.8%, 46.1%);
+        --ash: hsl(240, 2%, 50%); /* Ashen color */
+      }
+    }
+
+    .hero-section {
+      position: relative;
+      height: 100vh; /* Adjust height as needed */
+      background-image: url('car_photo.png'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+    }
+
+    /* Custom section styles */
+    .header-bg-ash,
+    .footer-bg-ash {
+      background-color: var(--black);
+      color: var(--foreground);
+    }
+
+    .footer-bg-ash a {
+      color: #fff; /* Set anchor (link) color to white */
+    }
+
+    .footer-bg-ash a:hover {
+      color: #ccc; /* Set hover color for anchor (link) */
+    }
+
+    .footer-bg-ash button {
+      color: var(--foreground); /* Set button text color to foreground color */
+      background-color: var(--ash); /* Set button background color to ash */
+      border: 1px solid var(--foreground); /* Add border for contrast */
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+      padding: 12px 24px; /* Increase padding for a larger clickable area */
+      font-size: 16px; /* Adjust font size */
+      cursor: pointer; /* Change cursor to pointer on hover */
+      outline: none; /* Remove default focus outline */
+      border-radius: 4px; /* Add slight border radius */
+      display: inline-block; /* Ensure button behaves like a block element */
+      text-decoration: none; /* Remove underline */
+    }
+
+    .footer-bg-ash button:hover {
+      background-color: var(--primary); /* Change background color on hover */
+      transform: scale(1.05); /* Slightly increase size on hover */
+    }
+
+    /* Adjustments for darker theme */
+    .dark .footer-bg-ash button {
+      background-color: var(--muted); /* Darker background color for buttons */
+      border-color: var(--muted-foreground); /* Darker border color for buttons */
+    }
+
+    .dark .footer-bg-ash button:hover {
+      background-color: var(--primary); /* Lighter background color on hover */
+      color: var(--foreground); /* Light text color on hover */
+    }
+
+    /* Styling for Contact Form Button */
+   .peer:placeholder-shown ~ label {
+  cursor: text;
+  top: 20px;
+  font-size: 1rem;
+}
+
+.peer:focus ~ label,
+.peer:not(:placeholder-shown) ~ label {
+  top: 4px;
+  font-size: 0.75rem;
+}
+
+.peer:focus ~ label {
+  color: #ffffff;
+}
+
+  </style>
+</head>
+<body class="bg-black text-white">
+  <div class="min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between p-6 header-bg-ash">
+      <div class="flex items-center space-x-4">
+        <div class="text-lg font-bold">EHUD WORYI</div>
+        <div class="hidden md:flex space-x-4"></div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <!-- Replace with your social media logos and links -->
+        <a href="https://www.facebook.com/ehudworyi8/" target="_blank" class="hover:text-gray-300">
+          <img aria-hidden="true" alt="facebook" src="icons8-facebook-48.png" class="w-6 h-6" />
+        </a>
+        <a href="https://www.instagram.com/ehudworyi43/" target="_blank" class="hover:text-gray-300">
+          <img aria-hidden="true" alt="instagram" src="icons8-instagram-48.png" class="w-6 h-6" />
+        </a>
+        <a href="https://www.linkedin.com/in/ehud-woryi-5b08522a8/" target="_blank" class="hover:text-gray-300">
+          <img aria-hidden="true" alt="linkedin" src="icons8-linkedin-48.png" class="w-6 h-6" />
+        </a>
+        <button class="footer-bg-ash button-hover">WORK WITH ME</button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="relative z-10 text-center text-white animate__animated animate__fadeInUp animate__delay-1s">
+        <h1 class="text-4xl md:text-6xl font-bold">LAUNCH PAD AGENCY 📈</h1>
+        <p class="mt-4 text-2xl md:text-4xl">"WE HAVE EMPOWERED OVER 20K BUSINESSES TO ACHIEVE SCALABLE GROWTH."</p>
+        <p class="mt-4 text-lg md:text-xl">"WE ARE OPEN FOR DEALS 🚀 READY TO SCALE YOUR BUSINESS?</p>
+        <div class="mt-6">
+          <a href="https://www.linkedin.com/in/ehud-woryi-5b08522a8/" class="bg-primary text-primary-foreground px-6 py-3 rounded hover:bg-primary-dark">REACH OUT TO ME ON LINKEDIN</a>
+        </div>
+      </div>
+    </section>
+<!-- Image Slider Section -->
+<section class="py-16 px-6" data-aos="fade-up">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">over £200,000 per year</h2>
+    <div class="slider-container">
+      <div class="slider">
+        <img src="business1.jpeg" alt="Slide 1" class="slide">
+        <img src="Bureau, 90 Fetter Lane - De Castelli.jpeg" alt="Slide 2" class="slide">
+        <img src="business 3.jpeg" alt="Slide 3" class="slide">
+        <!-- Add more images as needed -->
+      </div>
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<!-- Add this to your existing <style> section -->
+<style>
+  /* ... (existing styles) ... */
+
+  /* Slider styles */
+  .slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    height: 400px; /* Adjust as needed */
+    object-fit: cover;
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+</style>
+
+<!-- Add this just before the closing </body> tag -->
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlides() {
+    const slider = document.querySelector('.slider');
+    slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+  }
+
+  function changeSlide(n) {
+    slideIndex += n;
+    if (slideIndex >= slides.length) {slideIndex = 0}
+    if (slideIndex < 0) {slideIndex = slides.length - 1}
+    showSlides();
+  }
+
+  // Auto-advance slides every 5 seconds
+  setInterval(() => changeSlide(1), 5000);
+
+  // Initialize slider
+  showSlides();
+
+</script>
+
+    <!-- About Section -->
+    <section class="py-16 px-6" data-aos="fade-up">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+        <div class="flex justify-center mb-8">
+          <img src="ehud.png.jpg" alt="Your Image" class="max-w-full h-auto rounded-lg shadow-lg">
+        </div>
+        <p class="text-lg leading-relaxed">
+          Hello, I'm Ehud Woryi, a passionate advocate for personal development and resilience building. With a profound belief in the transformative power of personal growth, I specialize in guiding individuals to unlock their full potential and navigate challenges with resilience. 🌟
+          <br><br>
+          My journey in this field is driven by a deep-seated commitment to empowering others. Over the years, I've honed my skills in mentoring, coaching, and developing strategies for personal growth. Whether through personalized coaching sessions, impactful workshops, or motivational speaking engagements, my mission is to inspire positive change and empower individuals to thrive in all facets of their lives. 💼
+          <br><br>
+          I am dedicated to continuous learning and development, always exploring innovative methodologies and insights to better serve my clients. My approach is grounded in empathy, practical wisdom, and a results-oriented mindset, ensuring bespoke solutions that resonate and create enduring impact. 📈
+          <br><br>
+          Beyond my professional pursuits, I take pleasure in exploring diverse cultures, embarking on nature adventures, and actively engaging in community initiatives. I eagerly anticipate connecting with you to explore how we can collaborate on your journey toward personal growth and resilience. 🌍
+          <br><br>
+          We have had the privilege of partnering with numerous businesses, achieving significant milestones, and consistently exceeding expectations, with an annual earnings milestone of over £200,000. 🚀
+        </p>
+      </div>
+ 
+<section class="py-16 px-6 bg-gray-900" data-aos="fade-up">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold mb-12 text-center text-white">Get in Touch</h2>
+    <div class="bg-black bg-opacity-50 p-8 rounded-lg shadow-2xl border border-gray-700">
+      <form action="https://formspree.io/f/manwnvoz" method="POST" class="space-y-6">
+       
+        <div class="relative">
+          <input type="text" name="name" required class="peer w-full p-4 bg-transparent border-b-2 border-gray-600 text-white placeholder-transparent focus:outline-none focus:border-white transition-colors">
+          <label for="name" class="absolute left-0 -top-5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-white peer-focus:text-sm">Your Name</label>
+        </div>
+        
+        <div class="relative">
+          <input type="email" name="_replyto" required class="peer w-full p-4 bg-transparent border-b-2 border-gray-600 text-white placeholder-transparent focus:outline-none focus:border-white transition-colors">
+          <label for="_replyto" class="absolute left-0 -top-5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-white peer-focus:text-sm">Your Email</label>
+        </div>
+        
+        <div class="relative">
+          <textarea name="message" rows="4" required class="peer w-full p-4 bg-transparent border-b-2 border-gray-600 text-white placeholder-transparent focus:outline-none focus:border-white transition-colors"></textarea>
+          <label for="message" class="absolute left-0 -top-5 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-white peer-focus:text-sm">Your Message</label>
+        </div>
+        
+        <div>
+          <button type="submit" class="w-full bg-white text-black font-bold py-4 px-6 rounded-full hover:bg-gray-200 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+     
+ 
+ <!-- Achievements Section -->
+
+      <section class="py-16 px-6 bg-gray-900 fade-in" data-aos="fade-up">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Our Achievements</h2>
+    <div class="flex justify-around flex-wrap">
+      <div class="m-4">
+        <span class="text-4xl font-bold counter text-white" data-count="20000">20,000</span>
+        <p class="text-lg text-gray-300 mt-2">Businesses Empowered</p>
+      </div>
+      <div class="m-4">
+        <span class="text-4xl font-bold counter text-white" data-count="200000">200,000</span>
+        <p class="text-lg text-gray-300 mt-2">Annual Earnings (£)</p>
+      </div>
+      <div class="m-4">
+        <span class="text-4xl font-bold counter text-white" data-count="100">1000</span>
+        <p class="text-lg text-gray-300 mt-2">Satisfied Clients</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+    <footer class="py-8 px-6 footer-bg-ash text-center" data-aos="fade-up">
+      <div class="flex justify-center space-x-4 mb-4">
+        <!-- Replace with your social media logos and links -->
+        <a href="https://www.facebook.com/ehudworyi8/" target="_blank" class="hover:text-gray-300">
+          <img aria-hidden="true" alt="facebook" src="icons8-facebook-48.png" class="w-6 h-6" />
+        </a>
+        <a href="https://www.instagram.com/ehudworyi43/" target="_blank" class="hover:text-gray-300">
+          <img aria-hidden="true" alt="instagram" src="icons8-instagram-48.png" class="w-6 h-6" />
+        </a>
+        <a href="https://www.linkedin.com/in/ehud-woryi-5b08522a8/" target="_blank" class="hover:text-gray-300">
+          <img aria-hidden="true" alt="linkedin" src="icons8-linkedin-48.png" class="w-6 h-6" />
+        </a>
+      </div>
+      <div>
+        <button class="footer-bg-ash button-hover">Subscribe</button>
+      </div>
+      <p class="mt-4">CONTACT: +44 07475555075</p>
+      <p class="mt-4">Email: ehudworyi8@gmail.com</p>
+      <p class="mt-4">&copy; 2024 Ehud Woryi. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript for AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- JavaScript for Parallax Effect -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var heroSection = document.querySelector('.hero-section');
+      var initialOffset = heroSection.offsetTop;
+      var overlay = document.querySelector('.hero-overlay');
+      var parallaxFactor = 0.5; // Adjust the parallax effect as needed
+
+      function updateBackgroundPosition() {
+        var scrollPosition = window.pageYOffset;
+        var newPosition = (initialOffset - scrollPosition) * parallaxFactor;
+        heroSection.style.backgroundPosition = 'center ' + newPosition + 'px';
+      }
+
+      // Initial position update
+      updateBackgroundPosition();
+
+      // Update position on scroll
+      window.addEventListener('scroll', function() {
+        updateBackgroundPosition();
+      });
+    });
+  </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.counter').counterUp({
+      delay: 10,
+      time: 1000
+    });
+  });
+</script>
+</body>
+</html>
